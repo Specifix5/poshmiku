@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "console_title_template": " {{ .Folder }} :: {{if .Root}}root{{end}}",
+  "console_title_template": "{{if .Root}} root{{else}} {{.UserName}}{{end}} :: {{ .PWD }}",
   "palette": {
     "main-bg": "#24283b",
     "terminal-red": "#f7768e",
