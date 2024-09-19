@@ -28,7 +28,7 @@
           "style": "plain",
           "background": "transparent",
           "foreground": "p:terminal-magenta",
-          "template": "\u279c "
+          "template": "┏ "
         },
         {
           "type": "path",
