@@ -49,16 +49,27 @@
             "{{ if gt .Ahead 0 }}p:terminal-blue{{ end }}",
             "{{ if gt .Behind 0 }}p:terminal-red{{ end }}"
           ],
-          "template": "({{ .HEAD}})",
+          "template": "({{ .HEAD }}) ",
           "properties": {
             "fetch_status": true,
             "branch_icon": "\ue725 "
           }
         },
         {
+          "type": "executiontime",
+          "style": "plain",
+          "foreground": "p:white-blue",
+          "template": "({{ .FormattedMs }})",
+          "properties": {
+            "threshold": 1,
+            "style": "austin",
+            "always_enabled": false
+          }
+        },
+        {
           "type": "status",
           "style": "plain",
-          "foreground": "p:celeste-blue",
+          "foreground": "p:terminal-red",
           "template": " \uf00d"
         }
       ],
@@ -96,7 +107,7 @@
           "type": "ruby",
           "style": "plain",
           "foreground": "p:terminal-red",
-          "template": "\uE791 {{ .Full}}"
+          "template": "\uE791 {{ .Full }}"
         },
         {
           "type": "go",
@@ -138,7 +149,7 @@
   "transient_prompt": {
     "background": "p:t-background",
     "foreground": "p:terminal-blue",
-    "template": "\u279c "
+    "template": "[{{ now | date \"15:04:05\" }}] <b><p:light-sky-blue>{{ .UserName }}@{{ .HostName }}:</><p:terminal-magenta>{{ .PWD }}</></b> <p:pistachio-green>\udb84\udd7d</> "
   },
   "final_space": true,
   "version": 2,
