@@ -1,0 +1,132 @@
+palette = "tokyo"
+add_newline = true
+
+# ┏ [SHELL] user@host:path (git)(duration)(status) ........ runtimes [git_when]
+# $
+format = """
+${custom.prefix}$shell$username$hostname$directory${custom.leaf}$git_branch$git_status$cmd_duration$status$fill$nodejs$php$python$julia$ruby$golang${custom.git_when}$line_break$character
+"""
+
+[palettes.tokyo]
+main-bg = "#24283b"
+terminal-red = "#f7768e"
+pistachio-green = "#9ece6a"
+terminal-yellow = "#e0af68"
+terminal-blue = "#7aa2f7"
+celeste-blue = "#5afffc"
+light-sky-blue = "#8ecff5"
+terminal-white = "#c0caf5"
+white-blue = "#a9b1d6"
+terminal-magenta = "#bb9af7"
+terminal-black = "#414868"
+
+[custom.prefix]
+command = "printf '┏'"
+when = true
+style = "fg:terminal-magenta"
+format = "[$output]($style) "
+
+[custom.leaf]
+command = "printf '\U000F117D'"
+when = true
+style = "fg:pistachio-green"
+format = " [$output]($style) "
+
+[shell]
+disabled = false
+style = "fg:celeste-blue"
+bash_indicator = "bash"
+zsh_indicator  = "zsh"
+fish_indicator = "fish"
+powershell_indicator = "pwsh"
+nu_indicator   = "nu"
+unknown_indicator = "sh"
+format = "[\\[${indicator}\\]]($style) "
+
+[username]
+show_always = true
+style_user = "fg:light-sky-blue"
+format = "[$user]($style)"
+
+[hostname]
+ssh_only = false
+style = "fg:light-sky-blue"
+format = "[@$hostname]($style)"
+
+[directory]
+truncate_to_repo = false
+style = "fg:terminal-magenta"
+format = ":[$path]($style)"
+
+# ---- Git ----
+[git_branch]
+symbol = ""
+style = "fg:light-sky-blue"
+format = " [\\($branch\\)]($style) "
+
+[git_status]
+style = "fg:celeste-blue"
+format = "($stashed$staged$modified$untracked$conflicted$ahead$behind$diverged)"
+stashed    = "\\$"
+staged     = "+"
+modified   = "~"
+untracked  = "?"
+conflicted = "!"
+ahead      = "⇡${count}"
+behind     = "⇣${count}"
+diverged   = "⇕"
+
+# ---- Exec time ----
+[cmd_duration]
+min_time = 1
+show_milliseconds = true
+style = "fg:white-blue"
+format = "[\\($duration\\)]($style)"
+
+# ---- Status ----
+[status]
+disabled = false
+style = "fg:terminal-red"
+symbol = ""
+success_symbol = ""
+format = " [$symbol]($style)"
+
+# ---- Right side runtimes ----
+[nodejs]
+style  = "fg:pistachio-green"
+format = " 󰎙 [$version]($style) "
+
+[php]
+style  = "fg:terminal-blue"
+format = "  [$version]($style) "
+
+[python]
+style  = "fg:terminal-yellow"
+format = "  [$version]($style) "
+
+[julia]
+style  = "fg:terminal-magenta"
+format = "  [$version]($style) "
+
+[ruby]
+style  = "fg:terminal-red"
+format = "  [$version]($style) "
+
+[golang]
+style  = "fg:light-sky-blue"
+format = " ﳑ [$version]($style)"
+
+# git last-commit
+[custom.git_when]
+command = "git log --pretty=format:%cr -1 2>/dev/null || date +%H:%M:%S"
+when = "true"
+shell = ["bash","-c"]
+style = "fg:white-blue"
+format = " [$output]($style)"
+
+# ---- Prompt ----
+[character]
+success_symbol = "[\\$](fg:terminal-magenta)"
+error_symbol   = "[\\$](fg:terminal-magenta)"
+vicmd_symbol   = "[\\$](fg:terminal-magenta)"
+format = "$symbol "
