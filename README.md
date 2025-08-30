@@ -12,7 +12,14 @@ oh-my-posh init pwsh --config "https://raw.githubusercontent.com/Specifix5/poshm
 ```
 
 ### Starship
-replace your `~/.config/starship.toml` or equivalent with the one on the repo
+Replace your `~/.config/starship.toml` or equivalent with the one on the repo
+
+For fish users, you can install transient prompts with (using fisher)
+```bash
+fisher install zzhaolei/transient.fish
+```
+
+Then replace `~/.config/fish/functions/__fish_prompt.fish` with the one on the repo.
 
 ## Preview
 ![image](https://github.com/user-attachments/assets/adaf988c-a455-4ba4-8cad-b528efe6ec49)
