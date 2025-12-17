@@ -1,7 +1,7 @@
 /**
 * @name Nightcord
 * @author Siki, Ren (@riamuyumemi), Miya (@KageMiyaku)/Pudding (@Pudding77984612), Mai (@Specifix5)
-* @version 1.1.0
+* @version 1.1.2
 * @description A theme made to look like the Nightcord UI from Project Sekai (プロセカ)!
 * @website https://mfycode.github.io
 */
@@ -219,68 +219,91 @@ div {
   --background-surface-high: #4c39833f;
 }
 
-div[class^=wrapper_] div[class^=childWrapper_] {
+[aria-owns="guild-list-unread-dms"]  [class*="-childWrapper"] {
   content: url(https://github.com/Specifix5/Specifix5.github.io/blob/main/public/nightcord.png?raw=true)
 }
 
-div[class^=wrapper_] div[class^=childWrapper_] svg {
+img[class*="-avatar"][src^="/assets/"] {
+  content: url(https://github.com/Specifix5/Specifix5.github.io/blob/main/public/nightcord.png?raw=true)
+}
+
+[aria-owns="guild-list-unread-dms"]  [class*="-childWrapper"] > svg {
   display: none;
 }
 
-div[class^=title_], div[class^=trailing_] {
+div[class$=-title], div[class$=-trailing] {
   padding-top: 2px;
 }
 
-div[class*=winButtons_] {
+div[class*=-winButtons] {
   padding-right: 10px;
 }
 
-div[class*=winButtons_] div[class*=winButton_] {
+div[class*=-winButtons] div[class*=-winButton] {
   margin: 0px 0px 0px -3px;
   width: 1.75em;
   height: 1.75em;
   border-radius: 50%;
   transition: background-color 0.2s ease;
 }
-div[class*=winButtons_] div[class*=winButton_] svg * {
+div[class*=-winButtons] div[class*=-winButton] svg * {
   fill: transparent;
   stroke: transparent;
 }
 
-div[class*=winButtons_] div[class*=winButton_]::before {
+/* div[class*=-winButtons] div[class*=-winButton]::before {
     content: "●";
     font-size: 30px;
     margin: 0 2px 0 2px;
     padding: 0;
+    padding-left: 3px;
+    padding-bottom: 1px;
+} */
+
+div[class*="-winButtons"] div[class*="-winButton"]::before {
+    content: "";
+    display: inline-block;
+
+    width: 25px;
+    height: 15px;
+    border-radius: 50%;
+
+    background-color: currentColor;
+
+    padding: 0px;
+    padding-left: -10px;
+    margin-left: 6px;
+    vertical-align: middle;
 }
 
-div[class*=winButtons_] div[class*=winButton_]:hover {
+
+div[class*=-winButtons] div[class*=-winButton]:hover {
     color: #fff;
 }
-div[class*=winButtons_] div[class*=winButtonClose_] {
+div[class*=-winButtons] div[class*=-winButtonClose] {
   color: #ff55aa;
   margin-right: 4px;
 }
-div[class*=winButtons_] div[class*=winButtonClose_]:hover {
+div[class*=-winButtons] div[class*=-winButtonClose]:hover {
   background-color: #ff2291;
 }
-div[class*=winButtons_] div[class*=winButtonMinMax_]:nth-child(2) {
+div[class*=-winButtons] div[class*=-winButtonMinMax]:nth-child(2) {
   color: #ffdd59;
   
 }
-div[class*=winButtons_] div[class*=winButtonMinMax_]:nth-child(2):hover {
+div[class*=-winButtons] div[class*=-winButtonMinMax]:nth-child(2):hover {
   background-color: #cea400;
   color: var(--button-outline-brand-text-hover);
 }
-div[class*=winButtons_] div[class*=winButtonMinMax_]:nth-child(1) {
+div[class*=-winButtons] div[class*=-winButtonMinMax]:nth-child(1) {
   color: #58e0fe;
 }
-div[class*=winButtons_] div[class*=winButtonMinMax_]:nth-child(1):hover {
+div[class*=-winButtons] div[class*=-winButtonMinMax]:nth-child(1):hover {
   background-color: #00bae4;
   color: var(--button-outline-brand-text-hover);
 }
 
-div[class^=bar_] div[class^=title_][class*=title__]::before {
+div[class$=-bar] div[class$=-title][class$=-title]::before {
   content: "Nightcord";
   font-weight: 800;
   font-size: 0.85em;
@@ -291,9 +314,9 @@ div[class^=bar_] div[class^=title_][class*=title__]::before {
   width: auto;
 }
 
-div[class^=bar_] div[class^=title_][class*=title__] div[class^=icon_], 
-div[class^=bar_] div[class^=title_][class*=title__] div[class^=defaultColor_],
-div[class^=bar_] div[class^=title_][class*=title__] svg {
+div[class$=-bar] div[class$=-title][class$=-title] div[class$=-icon], 
+div[class$=-bar] div[class$=-title][class$=-title] div[class$=-defaultColor],
+div[class$=-bar] div[class$=-title][class$=-title] svg {
   display: none;
 }
 
