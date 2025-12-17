@@ -215,8 +215,26 @@ div {
 }
 
 .custom-theme-background .theme-dark {
+  --custom-theme-base-color: #3b285e;
   --theme-base-color: #6847c0;
   --background-surface-high: #574688;
+}
+
+div[class*="-peopleColumn"] {
+  background-color: #342953;
+}
+
+div[class*="-profileEntryCard"] {
+  background-color: var(--background-secondary);
+}
+
+div[class*="-actions"] > [class*="-actionButton"] {
+  background-color: var(--background-secondary);
+}
+
+
+div[id="vc-spotify-player"] {
+  background-color: var(--background-secondary-alt) !important;
 }
 
 [aria-owns="guild-list-unread-dms"]  [class*="-childWrapper"] {
