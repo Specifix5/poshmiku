@@ -1,9 +1,9 @@
 /**
 * @name Nightcord
-* @author Mai (@Specifix5), Siki, Ren (@riamuyumemi), Miya (@KageMiyaku)/Pudding (@Pudding77984612)
+* @author  Mai (@Specifix5), Siki, Ren (@riamuyumemi), Miya (@KageMiyaku)/Pudding (@Pudding77984612)
 * @version 1.1.3
 * @description A theme made to look like the Nightcord UI from Project Sekai (プロセカ)!
-* @website https://specifix.dev
+* @website https://specifix.dev/
 */
 
 [data-popout-root],
@@ -217,6 +217,11 @@ html {
   --theme-base-color: #6847c0;
   --background-surface-high: #574688;
   
+}
+
+[data-testid="subscriber-nitro-home-hero-header"] div[class*="-container"],
+[data-testid="subscriber-nitro-home-hero-header"] div[class*="-container"] div[class$="-progressContainer"] {
+  background-color: var(--background-secondary);
 }
 
 div[class*="-peopleColumn"],
