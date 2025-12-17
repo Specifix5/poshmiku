@@ -227,6 +227,11 @@ img[class*="-avatar"][src^="/assets/"] {
   content: url(https://github.com/Specifix5/Specifix5.github.io/blob/main/public/nightcord.png?raw=true)
 }
 
+div[class*="-avatar"][style*="/assets/"] {
+    content: url(https://github.com/Specifix5/Specifix5.github.io/blob/main/public/nightcord.png?raw=true)
+}
+
+
 [aria-owns="guild-list-unread-dms"]  [class*="-childWrapper"] > svg {
   display: none;
 }
