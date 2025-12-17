@@ -215,8 +215,8 @@ div {
 }
 
 .custom-theme-background .theme-dark {
-  --theme-base-color: #4d2ea3;
-  --background-surface-high: #4c39833f;
+  --theme-base-color: #6847c0;
+  --background-surface-high: #574688;
 }
 
 [aria-owns="guild-list-unread-dms"]  [class*="-childWrapper"] {
